@@ -1,11 +1,11 @@
 import XCTest
-@testable import StorageKey
+@testable import SwiftKey
 
-enum TestKey: StorageKey {
+enum TestKey: SwiftKey {
 case foo, bar
 }
 
-final class StorageKeyTests: XCTestCase {
+final class SwiftKeyTests: XCTestCase {
     func testGetAndSet() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct

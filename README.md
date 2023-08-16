@@ -1,11 +1,11 @@
-# StorageKey
+# SwiftKey
 
 以类型安全的方式来定义和管理键名。
 
 ```swift
-import StorageKey
+import SwiftKey
 
-enum MyUserDefaultKey: StorageKey {
+enum MyUserDefaultKey: SwiftKey {
   case foo, bar
 }
 
