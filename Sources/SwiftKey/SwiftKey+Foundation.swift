@@ -77,10 +77,6 @@ public extension UserDefaults {
     
 }
 
-public extension NSUbiquitousKeyValueStore {
-    
-}
-
 public extension Dictionary {
     
     subscript<T>(key: any RawRepresentable<SwiftKey>) -> T? {
