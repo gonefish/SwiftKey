@@ -1,4 +1,14 @@
-public typealias SwiftKey = String
+public struct SwiftKey : Equatable {
+    var string: String
+}
+
+extension SwiftKey : ExpressibleByStringLiteral {
+
+    public init(stringLiteral value: StringLiteralType) {
+        string = value
+    }
+
+}
 
 public enum SwiftKeyCaseFormat {
     case lowercase
@@ -36,7 +46,7 @@ public extension RawRepresentable where RawValue == SwiftKey {
     }
     
     private var items: (String, String) {
-        (String(describing: type(of: self)), rawValue)
+        (String(describing: type(of: self)), rawValue.string)
     }
 }
 
