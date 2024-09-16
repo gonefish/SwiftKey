@@ -13,6 +13,7 @@ extension SwiftKey : ExpressibleByStringLiteral {
 public enum SwiftKeyCaseFormat {
     case lowercase
     case uppercase
+    case capitalized
 }
 
 public extension RawRepresentable where RawValue == SwiftKey {
@@ -30,6 +31,8 @@ public extension RawRepresentable where RawValue == SwiftKey {
                 domain = domain.lowercased()
             case .uppercase:
                 domain = domain.uppercased()
+            case .capitalized:
+                domain = domain.capitalized
             }
         }
         
@@ -39,6 +42,8 @@ public extension RawRepresentable where RawValue == SwiftKey {
                 key = key.lowercased()
             case .uppercase:
                 key = key.uppercased()
+            case .capitalized:
+                key = key.capitalized
             }
         }
         
