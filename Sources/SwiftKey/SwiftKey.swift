@@ -1,5 +1,5 @@
 public struct SwiftKey : Equatable {
-    var string: String
+    public let string: String
 }
 
 extension SwiftKey : ExpressibleByStringLiteral {
