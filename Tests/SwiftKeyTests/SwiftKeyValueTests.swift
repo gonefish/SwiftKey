@@ -25,11 +25,11 @@ final class SwiftKeyValueTests: XCTestCase {
     func testKeyValue() throws {
         let keyValue = SwiftKeyValue<String>(key: SwiftKeyValueTestKey.foo)
 
-        userDefaults.set("Hello", for: .testValue2)
-        userDefaults.set("Hello", for: keyValue)
+        userDefaults.set("Hello", forKeyValue: .testValue2)
+        userDefaults.set("Hello", forKeyValue: keyValue)
 
-        let count = userDefaults.object(for: .testValue1) ?? 0
-        userDefaults.set(count + 1, for: .testValue1)
+        let count = userDefaults.object(forKeyValue: .testValue1) ?? 0
+        userDefaults.set(count + 1, forKeyValue: .testValue1)
     }
 
 

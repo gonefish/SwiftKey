@@ -24,7 +24,7 @@ final class SwiftKeyTests: XCTestCase {
 
     func testGetAndSet() throws {
         userDefaults.set("Hello", for: TestKey.foo)
-        XCTAssertEqual("Hello", UserDefaults.standard.string(for: TestKey.foo))
+        XCTAssertEqual("Hello", userDefaults.string(for: TestKey.foo))
     }
     
     func testName() {
