@@ -2,7 +2,7 @@ import XCTest
 @testable import SwiftKey
 
 enum TestKey: SwiftKey {
-case foo, bar
+case foo, bar, camelCaseToSpace
 }
 
 enum TestKey2: SwiftKey {
@@ -43,6 +43,8 @@ final class SwiftKeyTests: XCTestCase {
         XCTAssertEqual("TESTKEY_FOO", TestKey.foo.value(delimiter: "_", domainCase: .uppercase, keyCase: .uppercase))
         
         XCTAssertEqual("Testkey_Foo", TestKey.foo.value(delimiter: "_", domainCase: .capitalized, keyCase: .capitalized))
+        
+        XCTAssertEqual("Test Key_Camel Case To Space", TestKey.camelCaseToSpace.value(delimiter: "_", domainCase: .camelCaseToSpace, keyCase: .camelCaseToSpace))
     }
     
     func testDictionary() {

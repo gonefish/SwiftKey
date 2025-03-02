@@ -10,10 +10,19 @@ extension SwiftKey : ExpressibleByStringLiteral {
 
 }
 
+extension String {
+    func camelCaseToSpace() -> String {
+        let pattern = "([a-z])([A-Z])"
+        let result = self.replacingOccurrences(of: pattern, with: "$1 $2", options: .regularExpression, range: nil)
+        return result.split(separator: " ").map { $0.capitalized }.joined(separator: " ")
+    }
+}
+
 public enum SwiftKeyCaseFormat {
     case lowercase
     case uppercase
     case capitalized
+    case camelCaseToSpace
 }
 
 public extension RawRepresentable where RawValue == SwiftKey {
@@ -33,6 +42,8 @@ public extension RawRepresentable where RawValue == SwiftKey {
                 domain = domain.uppercased()
             case .capitalized:
                 domain = domain.capitalized
+            case .camelCaseToSpace:
+                domain = domain.camelCaseToSpace()
             }
         }
         
@@ -44,6 +55,8 @@ public extension RawRepresentable where RawValue == SwiftKey {
                 key = key.uppercased()
             case .capitalized:
                 key = key.capitalized
+            case .camelCaseToSpace:
+                key = key.camelCaseToSpace()
             }
         }
         
