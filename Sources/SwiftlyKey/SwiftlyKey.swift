@@ -1,8 +1,8 @@
-public struct SwiftKey : Equatable {
+public struct SwiftlyKey : Equatable, Sendable {
     public let string: String
 }
 
-extension SwiftKey : ExpressibleByStringLiteral {
+extension SwiftlyKey : ExpressibleByStringLiteral {
 
     public init(stringLiteral value: StringLiteralType) {
         string = value
@@ -18,20 +18,20 @@ extension String {
     }
 }
 
-public enum SwiftKeyCaseFormat {
+public enum SwiftlyKeyCaseFormat {
     case lowercase
     case uppercase
     case capitalized
     case camelCaseToSpace
 }
 
-public extension RawRepresentable where RawValue == SwiftKey {
+public extension RawRepresentable where RawValue == SwiftlyKey {
     
     var name: String {
         value(delimiter: ".")
     }
     
-    func value(delimiter: Character = ".", domainCase: SwiftKeyCaseFormat? = nil, keyCase: SwiftKeyCaseFormat? = nil) -> String {
+    func value(delimiter: Character = ".", domainCase: SwiftlyKeyCaseFormat? = nil, keyCase: SwiftlyKeyCaseFormat? = nil) -> String {
         var (domain, key) = items
         
         if let domainCase {

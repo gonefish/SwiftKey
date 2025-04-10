@@ -1,11 +1,11 @@
 import XCTest
-@testable import SwiftKey
+@testable import SwiftlyKey
 
-enum TestKey: SwiftKey {
+enum TestKey: SwiftlyKey {
 case foo, bar, camelCaseToSpace
 }
 
-enum TestKey2: SwiftKey {
+enum TestKey2: SwiftlyKey {
     case foo, bar
 
     var name: String {
@@ -14,7 +14,7 @@ enum TestKey2: SwiftKey {
 }
 
 
-final class SwiftKeyTests: XCTestCase {
+final class SwiftlyKeyTests: XCTestCase {
 
     let userDefaults = UserDefaults(suiteName: "SwiftKeyTests")!
 
