@@ -5,7 +5,7 @@
 ```swift
 import SwiftKey
 
-enum MyUserDefaultKey: SwiftKey {
+enum MyUserDefaultKey: SwiftlyKey {
   case foo, bar
 }
 
